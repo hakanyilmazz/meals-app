@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { API_URL } from "../../constants/url-constant";
+import { MEALS_API_URL } from "../../constants/url-constant";
 
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
@@ -15,7 +15,7 @@ const AvailableMeals = () => {
   // Don't use async method definition in useEffect! So we defined an async method in the method of the useEffect.
   useEffect(() => {
     const fetchMeals = async () => {
-      const response = await fetch(API_URL);
+      const response = await fetch(MEALS_API_URL);
 
       if (!response.ok) {
         throw new Error("Something went wrong!");
